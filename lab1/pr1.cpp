@@ -5,6 +5,7 @@
 #include <iostream>
 #include <string>
 #include <sstream>
+#include <vector>
 using namespace cv;
 
 int main()
@@ -15,7 +16,7 @@ int main()
         exit(EXIT_FAILURE);
     }
     std::string text = format("Width: %d, Height: %d", img.cols, img.rows);
-  
+
     putText(img, text, Point(25, 25), FONT_HERSHEY_PLAIN, 2, Scalar(0, 0, 255), 2);
 
     cv::line(img, Point(80, 420), Point(200, 420), Scalar(0, 255, 0), 2);
@@ -41,7 +42,7 @@ int main()
 
     cv::Mat seg4 = img(Rect(img.cols / 2, img.cols / 2, img.rows / 2, img.rows / 2));
     cv::imshow("4 segment", seg4);
-    
+
     cv::Mat mask(img.size(), CV_8UC1, Scalar(0));
     cv::rectangle(mask, Point(170, 170), Point(340, 340), Scalar(255, 255, 255), -1);
 
