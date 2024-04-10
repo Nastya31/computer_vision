@@ -72,7 +72,7 @@ int main() {
         }
        
 
-        imshow("White square", imgg);
+        imshow("Video", imgg);
         video.write(imgg);
         char c = (char)waitKey(25);
         if (c == 27)
